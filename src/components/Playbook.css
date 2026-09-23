@@ -1,0 +1,291 @@
+.playbook {
+  position: relative;
+  padding-top: clamp(80px, 10vw, 120px);
+}
+
+.playbook__track {
+  padding-bottom: clamp(80px, 10vw, 120px);
+}
+
+.playbook__track.is-pinned {
+  height: 320vh;
+  padding-bottom: 0;
+}
+
+.is-pinned .playbook__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.playbook__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 40px;
+  margin-bottom: 48px;
+}
+
+.playbook__head .eyebrow {
+  width: 100%;
+}
+
+.playbook__head h2 {
+  font-size: clamp(64px, 11vw, 150px);
+}
+
+.is-pinned .playbook__head h2 {
+  font-size: clamp(72px, 13vh, 150px);
+}
+
+.is-pinned .playbook__head {
+  margin-bottom: 4vh;
+}
+
+.playbook__progress {
+  flex: 1;
+  min-width: 160px;
+  height: 2px;
+  background: var(--line);
+  margin-bottom: 18px;
+}
+
+.playbook__progress i {
+  display: block;
+  height: 100%;
+  background: var(--blue);
+}
+
+.playbook__cards {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: 16px;
+}
+
+.is-pinned .playbook__cards {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  padding-left: max(var(--gutter), calc((100vw - var(--max)) / 2 + var(--gutter)));
+}
+
+.pb-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.is-pinned .pb-card {
+  width: min(460px, 38vw);
+  height: min(540px, 58vh);
+}
+
+.is-pinned .pb-vis {
+  margin-top: min(96px, 9vh);
+}
+
+.pb-card__n {
+  position: absolute;
+  top: -0.14em;
+  right: 12px;
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 180px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line-strong);
+  pointer-events: none;
+}
+
+.pb-card h3 {
+  margin: auto 0 10px;
+  padding-top: 32px;
+  font-family: var(--f-display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.pb-card p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+/* step visuals */
+.pb-vis {
+  position: relative;
+  margin-top: 96px;
+  font-family: var(--f-system);
+}
+
+.pb-vis__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 10px;
+}
+
+.pb-vis__row b {
+  color: var(--text);
+}
+
+.pb-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.pb-bar i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--blue-lift));
+}
+
+.pb-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.pb-checks span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 11px;
+  border-radius: 99px;
+  background: var(--blue-soft);
+  color: #8db6ff;
+}
+
+.pb-vis--stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 18px 6px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-2));
+}
+
+.pb-vis--stats div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pb-vis--stats b {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.pb-vis--stats small {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  color: #8fa6d6;
+  letter-spacing: 0.1em;
+}
+
+.pb-vis--reel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.pb-reel {
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+}
+
+.pb-reel svg {
+  width: 34px;
+  height: 34px;
+  padding: 9px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  fill: #fff;
+  stroke: none;
+}
+
+.pb-reel--a {
+  background:
+    radial-gradient(circle at 50% 110%, rgba(255, 170, 80, 0.55), transparent 55%),
+    repeating-linear-gradient(90deg, #6b3f1c 0 14px, #7a4a22 14px 28px);
+}
+
+.pb-reel--b {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 18px, rgba(255, 255, 255, 0.22) 18px 19px),
+    radial-gradient(circle at 30% 20%, #3fa45b, #0f3d22 75%);
+}
+
+.pb-reel--c {
+  border: 1.5px dashed var(--line-strong);
+  color: var(--text-2);
+}
+
+.pb-reel--c svg {
+  background: none;
+  fill: none;
+  stroke: currentColor;
+}
+
+.pb-vis--msg {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+
+.pb-bubble {
+  max-width: 85%;
+  padding: 11px 14px;
+  border-radius: 18px 18px 18px 6px;
+  background: var(--surface-2);
+}
+
+.pb-bubble strong {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  margin-bottom: 3px;
+  color: var(--text-2);
+}
+
+.pb-bubble--me {
+  align-self: flex-end;
+  border-radius: 18px 18px 6px 18px;
+  background: var(--blue);
+}
+
+@media (max-width: 999px) {
+  .pb-card {
+    min-height: 420px;
+  }
+  .pb-card__n {
+    font-size: 140px;
+  }
+}

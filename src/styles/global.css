@@ -1,0 +1,181 @@
+/* ------------------------------------------------------------------
+   Next Level — landing tokens
+   Brand values mirror mvp_app/src/design/tokens.ts (dark theme + brand
+   navy). Swap here and the whole site follows.
+   ------------------------------------------------------------------ */
+:root {
+  /* surfaces (app dark theme) */
+  --ink: #0b0b0c;
+  --ink-2: #111113;
+  --surface: #161617;
+  --surface-2: #1f1f21;
+  --line: #2a2a2c;
+  --line-strong: #3a3a3d;
+
+  /* text */
+  --text: #f5f5f5;
+  --text-2: #a8a8a8;
+  --text-3: #6e6e70;
+
+  /* brand */
+  --blue: #0b5fff;
+  --blue-lift: #3b82f6;
+  --blue-soft: #132038;
+  --navy: #0b1530;
+  --navy-2: #13224a;
+  --success: #28c76f;
+  --gold: #e3b341;
+
+  /* light "day game" sections */
+  --paper: #f3f2ee;
+  --paper-2: #e7e5df;
+  --paper-ink: #0a0a0a;
+  --paper-muted: #5c5c5f;
+
+  /* type */
+  --f-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;
+  --f-body: 'Archivo', system-ui, sans-serif;
+  --f-mono: 'Martian Mono', ui-monospace, monospace;
+  --f-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+
+  /* layout */
+  --gutter: clamp(16px, 4vw, 48px);
+  --max: 1320px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+}
+
+::selection {
+  background: var(--blue);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue-lift);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* shared type primitives */
+.display {
+  font-family: var(--f-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  background: var(--blue);
+}
+
+/* stroke colour comes from --stroke (currentColor would be the transparent fill) */
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--stroke, var(--text));
+}
+
+.section {
+  position: relative;
+  padding: clamp(88px, 12vw, 160px) 0;
+}
+
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+
+@media (min-width: 900px) {
+  .section-head {
+    grid-template-columns: 1.3fr 1fr;
+    align-items: end;
+  }
+}
+
+.section-head h2 {
+  font-size: clamp(56px, 9vw, 132px);
+}
+
+.section-head p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: clamp(17px, 1.4vw, 19px);
+  max-width: 460px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

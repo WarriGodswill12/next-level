@@ -1,0 +1,95 @@
+.faq {
+  background: var(--paper);
+  color: var(--paper-ink);
+}
+
+.faq .eyebrow {
+  color: var(--paper-muted);
+}
+
+.faq__grid {
+  display: grid;
+  gap: 48px;
+}
+
+@media (min-width: 1000px) {
+  .faq__grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+  }
+}
+
+.faq__title {
+  margin-top: 22px;
+  font-size: clamp(56px, 7.5vw, 112px);
+}
+
+.faq__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--paper-ink);
+}
+
+.faq__list li {
+  border-bottom: 1px solid var(--paper-2);
+}
+
+.faq__list button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 26px 0;
+  text-align: left;
+}
+
+.faq__n {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  color: var(--paper-muted);
+}
+
+.faq__q {
+  flex: 1;
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+
+.faq__list button:hover .faq__q {
+  color: var(--blue);
+}
+
+.faq__toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #cfccc4;
+  transition: transform 0.4s var(--ease), background 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.is-open .faq__toggle {
+  transform: rotate(45deg);
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.faq__list p {
+  margin: 0;
+  padding: 0 58px 28px 38px;
+  color: var(--paper-muted);
+  font-size: 16px;
+  max-width: 640px;
+}
+
+@media (max-width: 600px) {
+  .faq__list p {
+    padding: 0 0 24px 0;
+  }
+}

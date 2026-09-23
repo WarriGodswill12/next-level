@@ -1,0 +1,13 @@
+.statement {
+  background: var(--ink);
+}
+
+.statement__text {
+  margin-top: 32px;
+  font-size: clamp(52px, 8.4vw, 132px);
+  line-height: 0.92;
+}
+
+.statement__hl {
+  color: var(--blue-lift);
+}

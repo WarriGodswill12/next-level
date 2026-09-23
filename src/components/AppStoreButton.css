@@ -1,0 +1,68 @@
+.appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px 12px 18px;
+  border-radius: 14px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.2s;
+  will-change: transform;
+}
+
+.appstore--lg {
+  padding: 16px 30px 16px 24px;
+  border-radius: 16px;
+}
+
+.appstore--light {
+  background: #fff;
+  color: #000;
+}
+
+.appstore--dark {
+  background: #000;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.appstore:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px -12px rgba(11, 95, 255, 0.7);
+}
+
+.appstore__apple {
+  width: 26px;
+  height: 26px;
+  margin-top: -3px;
+}
+
+.appstore--lg .appstore__apple {
+  width: 32px;
+  height: 32px;
+}
+
+.appstore__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  font-family: var(--f-system);
+}
+
+.appstore__text small {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.appstore__text strong {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.appstore--lg .appstore__text small {
+  font-size: 12px;
+}
+
+.appstore--lg .appstore__text strong {
+  font-size: 26px;
+}
