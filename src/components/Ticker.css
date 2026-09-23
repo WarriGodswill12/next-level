@@ -31,12 +31,7 @@
 .ticker__track {
   display: flex;
   width: max-content;
-  animation: marquee 38s linear infinite;
-}
-
-.ticker__band--back .ticker__track {
-  animation-direction: reverse;
-  animation-duration: 48s;
+  will-change: transform;
 }
 
 .ticker__track span {
@@ -63,8 +58,3 @@
   -webkit-text-stroke-width: 1px;
 }
 
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}

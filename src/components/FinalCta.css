@@ -8,7 +8,6 @@
   isolation: isolate;
   background: var(--blue);
   padding: clamp(100px, 14vw, 200px) 0 clamp(80px, 10vw, 140px);
-  transform-origin: 50% 100%;
 }
 
 /* expanding "signal" rings from the bottom-right corner */
@@ -74,4 +73,92 @@
   max-width: 280px;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.85);
+}
+
+.cta__inner {
+  display: grid;
+  gap: 48px;
+  align-items: end;
+}
+
+@media (min-width: 1000px) {
+  .cta__inner {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* desktop-only: a phone visitor would tap the button instead */
+.cta__qr {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 18px 18px 16px;
+  border-radius: 24px;
+  background: #fff;
+  color: #0a0a0a;
+  box-shadow: 0 40px 80px -30px rgba(0, 10, 40, 0.7);
+}
+
+@media (min-width: 1000px) {
+  .cta__qr {
+    display: flex;
+  }
+}
+
+.cta__qr-code {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.cta__qr-code svg {
+  display: block;
+}
+
+.cta__qr-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.cta__qr strong {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 22px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.cta__qr small {
+  font-size: 12px;
+  color: #5c5c5f;
+}
+
+@media (max-width: 600px) {
+  .cta__actions :where(.appstore--lg) {
+    padding: 14px 24px 14px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta__title {
+    font-size: clamp(52px, 15.5vw, 110px);
+    margin-bottom: 36px;
+  }
+  .cta__rings {
+    right: -60vw;
+    bottom: -40vw;
+    width: 160vw;
+  }
+}
+
+/* keep content clear of the inset clip before the panel reaches full width */
+@media (max-width: 600px) {
+  .cta__inner {
+    padding-inline: calc(var(--gutter) + 12px);
+  }
 }

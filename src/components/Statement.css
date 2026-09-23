@@ -11,3 +11,13 @@
 .statement__hl {
   color: var(--blue-lift);
 }
+
+.statement + .oldway {
+  padding-top: 0;
+}
+
+@media (max-width: 600px) {
+  .statement__text {
+    font-size: clamp(44px, 13vw, 64px);
+  }
+}

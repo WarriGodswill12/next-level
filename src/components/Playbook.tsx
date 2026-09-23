@@ -124,8 +124,8 @@ export function Playbook() {
           </div>
 
           <motion.ol className="playbook__cards" style={desktop ? { x } : undefined}>
-            {steps.map((s) => (
-              <li className="pb-card" key={s.n}>
+            {steps.map((s, i) => (
+              <li className="pb-card" key={s.n} style={{ ['--i' as string]: i }}>
                 <span className="pb-card__n">{s.n}</span>
                 {s.visual}
                 <h3>{s.title}</h3>

@@ -281,11 +281,35 @@
   background: var(--blue);
 }
 
+/* below desktop: cards stick and stack like a dealt deck */
 @media (max-width: 999px) {
+  .playbook__cards {
+    gap: 20px;
+  }
   .pb-card {
-    min-height: 420px;
+    position: sticky;
+    top: calc(84px + var(--i) * 14px);
+    min-height: min(400px, 60svh);
+    padding: 24px;
+    box-shadow: 0 -24px 48px -24px rgba(0, 0, 0, 0.9);
   }
   .pb-card__n {
-    font-size: 140px;
+    font-size: 132px;
+  }
+  .pb-vis {
+    margin-top: 72px;
+  }
+  .pb-card h3 {
+    font-size: 34px;
+    padding-top: 28px;
+  }
+  .pb-card p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .pb-vis--stats b {
+    font-size: 36px;
   }
 }

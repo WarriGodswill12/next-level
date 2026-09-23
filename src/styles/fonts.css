@@ -1,0 +1,11 @@
+/* Fonts are bundled (latin subset) rather than pulled from Google, so the
+   condensed display face is always present; a wide fallback overflows the layout. */
+@import '@fontsource/big-shoulders-display/latin-600';
+@import '@fontsource/big-shoulders-display/latin-800';
+@import '@fontsource/big-shoulders-display/latin-900';
+@import '@fontsource/archivo/latin-400';
+@import '@fontsource/archivo/latin-500';
+@import '@fontsource/archivo/latin-600';
+@import '@fontsource/archivo/latin-700';
+@import '@fontsource/martian-mono/latin-400';
+@import '@fontsource/martian-mono/latin-500';

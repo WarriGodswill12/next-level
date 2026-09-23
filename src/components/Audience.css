@@ -137,3 +137,31 @@
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.12),
     0 60px 100px -40px rgba(10, 20, 50, 0.55);
 }
+
+@media (max-width: 999px) {
+  .aud__grid {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aud__title {
+    font-size: clamp(52px, 15vw, 80px);
+    margin: 18px 0 22px;
+  }
+  .aud__lede {
+    margin-bottom: 28px;
+  }
+  .aud__points li {
+    padding: 18px 0 20px;
+  }
+  .aud__stage .phone {
+    zoom: 0.9;
+  }
+  .aud__jersey {
+    top: auto;
+    bottom: 4%;
+    translate: 0 0;
+    font-size: 110vw;
+  }
+}
